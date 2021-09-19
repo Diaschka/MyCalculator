@@ -22,6 +22,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/first_number_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -34,6 +35,7 @@
                 android:textSize="22sp" />
 
             <EditText
+                android:id="@+id/second_number_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -44,7 +46,6 @@
                 android:inputType="number"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
-
 
         </LinearLayout>
 
@@ -106,8 +107,6 @@
                     android:textSize="26sp" />
 
             </TableRow>
-
-
 
             <TableRow
                 android:layout_marginTop="12dp"
@@ -171,7 +170,6 @@
                     android:background="@drawable/wooden_button_resize" />
 
             </TableRow>
-
 
             <TableRow
                 android:layout_marginTop="12dp"
