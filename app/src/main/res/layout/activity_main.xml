@@ -30,7 +30,7 @@
                 android:background="#080909"
                 android:gravity="center"
                 android:hint="enter number"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -43,7 +43,7 @@
                 android:background="#080909"
                 android:gravity="center"
                 android:hint="enter number"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 
@@ -57,7 +57,7 @@
             android:background="#B8B8B6"
             android:gravity="center"
             android:hint="RESULT"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="bold" />
 
