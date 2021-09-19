@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_main);
+        setContentView(R.layout.activity_main);
 
-        firstNumberEditText.findViewById(id.first_number_edit_text);
-        secondNumberEditText.findViewById(id.second_number_edit_text);
-        resultFieldTextView.findViewById(id.result_field_text_view);
-        additionButton.findViewById(id.addition_button);
+        firstNumberEditText = findViewById(R.id.first_number_edit_text);
+        secondNumberEditText = findViewById(R.id.second_number_edit_text);
+        resultFieldTextView = findViewById(R.id.result_field_text_view);
+        additionButton = findViewById(R.id.addition_button);
 
         additionButton.setOnClickListener(new View.OnClickListener() {
             @Override
