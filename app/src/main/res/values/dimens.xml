@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="input_number_field_margin">10dp</dimen>
+    <dimen name="number_button_text_size">24sp</dimen>
+    <dimen name="operations_button_text_size">26sp</dimen>
+    <dimen name="operation_button_margin">6dp</dimen>
+    <dimen name="calculator_button_margin">4dp</dimen>
+    <dimen name="input_number_field_text_size">22sp</dimen>
+</resources>

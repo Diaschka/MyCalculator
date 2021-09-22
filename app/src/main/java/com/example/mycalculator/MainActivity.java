@@ -20,17 +20,19 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.Locale;
 import java.util.Objects;
+import java.util.SplittableRandom;
 
 public class MainActivity extends AppCompatActivity {
     private EditText firstNumberEditText;
     private EditText secondNumberEditText;
     private TextView resultFieldTextView;
-    private TextView equalsTextView;
+    private MaterialButton exitButton;
+    private MaterialButton resetButton;
     private Button additionButton;
     private Button subtractionButton;
     private Button divisionButton;
     private Button multiplicationButton;
-
+    Calculator calcResult = new Calculator();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,40 +46,47 @@ public class MainActivity extends AppCompatActivity {
         subtractionButton = findViewById(id.subtraction_button);
         divisionButton = findViewById(id.division_button);
         multiplicationButton = findViewById(id.multiplication_button);
+        exitButton = findViewById(id.exit_button);
+        resetButton = findViewById(id.reset_button);
+
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firstNumberEditText.getText().clear();
+                secondNumberEditText.getText().clear();
+                resultFieldTextView.setText("");
+            }
+        });
 
         additionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                float firstNumber = Float.parseFloat(firstNumberEditText.getText().toString());
-                float secondNumber = Float.parseFloat(secondNumberEditText.getText().toString());
-                float result;
-                result = firstNumber + secondNumber;
-                resultFieldTextView.setText(String.format(Locale.getDefault(),"%.2f",result));
+                String firstArg = firstNumberEditText.getText().toString();
+                String secondArg = secondNumberEditText.getText().toString();
+                if (firstArg == null || secondArg == null) {
+                    Toast.makeText(MainActivity.this, "Enter number!", Toast.LENGTH_SHORT).show();
+                } else {
+                    resultFieldTextView.setText(calcResult.addition(firstArg, secondArg));
+                }
             }
         });
 
         subtractionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                float firstNumber = Float.parseFloat(firstNumberEditText.getText().toString());
-                float secondNumber = Float.parseFloat(secondNumberEditText.getText().toString());
-                float result;
-                result = firstNumber - secondNumber;
-                resultFieldTextView.setText(String.format(Locale.getDefault(),"%.2f",result));
-            }
-        });
-
-        divisionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                float firstNumber = Float.parseFloat(firstNumberEditText.getText().toString());
-                float secondNumber = Float.parseFloat(secondNumberEditText.getText().toString());
-                if (secondNumber == 0){
-                    Toast.makeText(MainActivity.this,"You can't divide on o!",Toast.LENGTH_SHORT).show();
+                String firstArg = firstNumberEditText.getText().toString();
+                String secondArg = secondNumberEditText.getText().toString();
+                if (firstArg == null || secondArg == null) {
+                    Toast.makeText(MainActivity.this, "Enter number!", Toast.LENGTH_SHORT).show();
                 } else {
-                    float result;
-                    result = firstNumber/secondNumber;
-                    resultFieldTextView.setText(String.format(Locale.getDefault(),"%.2f",result));
+                    resultFieldTextView.setText(calcResult.subtraction(firstArg, secondArg));
                 }
             }
         });
@@ -85,12 +94,24 @@ public class MainActivity extends AppCompatActivity {
         multiplicationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                float firstNumber = Float.parseFloat(firstNumberEditText.getText().toString());
-                float secondNumber = Float.parseFloat(secondNumberEditText.getText().toString());
-                float result;
-                result = firstNumber * secondNumber;
-                resultFieldTextView.setText(String.format(Locale.getDefault(),"%.2f",result));
+                // TODO
             }
         });
+
+//        divisionButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                float firstNumber = Float.parseFloat(firstNumberEditText.getText().toString());
+//                float secondNumber = Float.parseFloat(secondNumberEditText.getText().toString());
+//                if (secondNumber == 0){
+//                    Toast.makeText(MainActivity.this,"You can't divide on o!",Toast.LENGTH_SHORT).show();
+//                } else {
+//                    float result;
+//                    result = firstNumber/secondNumber;
+//                    resultFieldTextView.setText(String.format(Locale.getDefault(),"%.2f",result));
+//                }
+//            }
+//        });
+
     }
 }
