@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton subtractionButton;
     private MaterialButton divisionButton;
     private MaterialButton multiplicationButton;
+    private TextView operationSymbolTextView;
     Calculator calcResult = new Calculator();
 
     @Override
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         multiplicationButton = findViewById(id.multiplication_button);
         exitButton = findViewById(id.exit_button);
         resetButton = findViewById(id.reset_button);
+        operationSymbolTextView = findViewById(id.operation_result_text_view);
 
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Enter second number!", Toast.LENGTH_SHORT).show();
                 } else {
                     resultFieldTextView.setText(calcResult.addition(firstArg, secondArg));
+                    operationSymbolTextView.setText("+");
                 }
             }
         });
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Enter second number!", Toast.LENGTH_SHORT).show();
                 } else {
                     resultFieldTextView.setText(calcResult.subtraction(firstArg, secondArg));
+                    operationSymbolTextView.setText("-");
                 }
             }
         });
@@ -104,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Enter second number!", Toast.LENGTH_SHORT).show();
                 } else {
                     resultFieldTextView.setText(calcResult.multiplication(firstArg, secondArg));
+                    operationSymbolTextView.setText("*");
                 }
             }
         });
@@ -121,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"You can't divide on 0!",Toast.LENGTH_SHORT).show();
                 } else {
                     resultFieldTextView.setText(calcResult.division(firstArg, secondArg));
+                    operationSymbolTextView.setText("/");
                 }
             }
         });
