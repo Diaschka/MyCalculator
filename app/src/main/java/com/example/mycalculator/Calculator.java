@@ -1,17 +1,10 @@
 package com.example.mycalculator;
 
 public class Calculator {
-    protected float argumentOne;
-    protected float argumentTwo;
-    protected float result;
 
     public float getFloats(String calcArg){
-        float floatArg;
-        if(calcArg == null){
-            floatArg = 0;
-        } else {
-            floatArg = Float.parseFloat(calcArg);
-        } return floatArg;
+        float floatArg = Float.parseFloat(calcArg);
+        return floatArg;
     }
 
     public String getStrings(float result){
@@ -31,6 +24,11 @@ public class Calculator {
 
     public String multiplication(String argOne,String argTwo){
         float result = getFloats(argOne) * getFloats(argTwo);
+        return getStrings(result);
+    }
+
+    public String division(String argOne,String argTwo){
+        float result = getFloats(argOne) / getFloats(argTwo);
         return getStrings(result);
     }
 
