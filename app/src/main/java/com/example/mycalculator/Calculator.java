@@ -1,5 +1,7 @@
 package com.example.mycalculator;
 
+import java.math.BigDecimal;
+
 public class Calculator {
 
     public float getFloats(String calcArg){
@@ -8,7 +10,9 @@ public class Calculator {
     }
 
     public String getStrings(float result){
-        String resultString = Float.toString(result);
+        BigDecimal bd = new BigDecimal(result);
+        bd = bd.setScale(2,BigDecimal.ROUND_HALF_UP);
+        String resultString = bd.toString();
         return resultString;
     }
 

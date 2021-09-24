@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 firstNumberEditText.getText().clear();
                 secondNumberEditText.getText().clear();
                 resultFieldTextView.setText("");
+                operationSymbolTextView.setText("");
             }
         });
 
