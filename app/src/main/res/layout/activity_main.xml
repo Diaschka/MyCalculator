@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="432dp"
         android:layout_height="match_parent"
         android:background="@drawable/hardwood" />
 
@@ -19,43 +20,43 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_margin="6dp"
+            android:layout_marginTop="12dp"
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/first_number_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="#080909"
-                android:gravity="center"
-                android:hint="enter number"
-                android:inputType="number"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
+                style="@style/inputNumberFieldsStyle"
+                android:layout_weight="1"/>
 
             <EditText
+                android:id="@+id/second_number_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="#080909"
-                android:gravity="center"
-                android:hint="enter number"
-                android:inputType="number"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
-
+                style="@style/inputNumberFieldsStyle"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="30dp"
-            android:background="#B8B8B6"
+            android:id="@+id/operation_result_text_view"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:hint="RESULT"
-            android:textColor="@color/white"
+            android:textSize="46sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/result_field_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp"
+            android:background="@color/pinky"
+            android:gravity="center"
+            android:hint="@string/result_field_hint_text"
+            android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -67,135 +68,59 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TableRow android:gravity="center">
+            <TableRow android:gravity="center"
+                android:layout_marginBottom="30dp">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:backgroundTint="@color/white"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addition_button"
                     android:text="+"
-                    android:textColor="@color/black"
-                    android:textSize="26sp" />
-
-                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:backgroundTint="@color/white"
+                    style="@style/calcOperationsButtonStyle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/subtraction_button"
                     android:text="-"
-                    android:textColor="@color/black"
-                    android:textSize="26sp" />
-
-                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:backgroundTint="@color/white"
+                    style="@style/calcOperationsButtonStyle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/multiplication_button"
                     android:text="*"
-                    android:textColor="@color/black"
-                    android:textSize="26sp" />
-
-                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="6dp"
-                    android:backgroundTint="@color/white"
+                    style="@style/calcOperationsButtonStyle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/division_button"
                     android:text="/"
-                    android:textColor="@color/black"
-                    android:textSize="26sp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/calcOperationsButtonStyle" />
 
             </TableRow>
 
+            <TableRow>
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/reset_button"
+                    android:text="@string/reset_button_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/functionButtonStyle" />
 
-            <TableRow
-                android:layout_marginTop="12dp"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/number_1_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_2_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_3_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="12dp"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/number_4_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_5_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_6_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_marginTop="12dp"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/number_7_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_8_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_9_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_marginTop="12dp"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/number_point_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_0_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
-
-                <ImageButton
-                    android:id="@+id/number_equals_image_button"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/wooden_button_resize" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/exit_button"
+                    android:text="@string/exit_button_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/functionButtonStyle" />
 
             </TableRow>
 
         </TableLayout>
-
     </LinearLayout>
-
 </FrameLayout>

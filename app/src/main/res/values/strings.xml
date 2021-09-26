@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyCalculator</string>
+    <string name="result_field_hint_text">RESULT</string>
+    <string name="enter_number_hint">Enter number</string>
+    <string name="reset_button_text">RESET</string>
+    <string name="exit_button_text">EXIT</string>
 </resources>
