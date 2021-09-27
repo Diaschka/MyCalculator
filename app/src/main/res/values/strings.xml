@@ -4,4 +4,9 @@
     <string name="enter_number_hint">Enter number</string>
     <string name="reset_button_text">RESET</string>
     <string name="exit_button_text">EXIT</string>
+    <string name="theme_change_button">THEME CHANGE</string>
+    <string name="theme_selection_text_view">Select the theme:</string>
+    <string name="main_theme_button_text">MAIN THEME</string>
+    <string name="my_theme_button_text">MY THEME</string>
+    <string name="return_button">BACK</string>
 </resources>

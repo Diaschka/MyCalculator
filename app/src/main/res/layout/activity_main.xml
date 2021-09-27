@@ -122,5 +122,27 @@
             </TableRow>
 
         </TableLayout>
+
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="@string/theme_change_button"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/grey"
+            app:cornerRadius="16dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
