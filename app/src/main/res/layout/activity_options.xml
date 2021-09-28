@@ -26,6 +26,7 @@
         app:layout_constraintTop_toBottomOf="@id/theme_change_text_view">
 
         <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/my_theme_radiobutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/radioButtonsStyle"
@@ -33,6 +34,7 @@
             />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/main_theme_radiobutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/radioButtonsStyle"
@@ -42,6 +44,7 @@
     </RadioGroup>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/return_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/select_theme_radiobutton_group"
