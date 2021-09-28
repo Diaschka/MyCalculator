@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton divisionButton;
     private MaterialButton multiplicationButton;
     private TextView operationSymbolTextView;
+    private MaterialButton themeChangeMaterialButton;
     Calculator calcResult = new Calculator();
 
     @Override
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         exitButton = findViewById(id.exit_button);
         resetButton = findViewById(id.reset_button);
         operationSymbolTextView = findViewById(id.operation_result_text_view);
+        themeChangeMaterialButton = findViewById(id.change_theme_button);
 
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
                 secondNumberEditText.getText().clear();
                 resultFieldTextView.setText("");
                 operationSymbolTextView.setText("");
+            }
+        });
+
+        themeChangeMaterialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, OptionsActivity.class);
+                startActivity(intent);
             }
         });
 
